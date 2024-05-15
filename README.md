@@ -1,0 +1,2 @@
+# ObsidianSetup
+ Basic Obsidian Setup
