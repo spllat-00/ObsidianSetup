@@ -1,0 +1,91 @@
+{
+	// Place your ObsidianSetup workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"Create CSS for Colored Sidebar": {
+		"scope": "css",
+		"prefix": "csi",
+		"body": [
+			"/* ------------------------------- ${1:prefixFileName} Prefix -------------------------------- */",
+			".nav-folder-title[data-path^=\"${1:prefixFileName}\"] {",
+			"  color: var(--${2:colorName});",
+			"  --nav-item-color-hover: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) var(--fg-contrast-amount),",
+			"    var(--contrast-color)",
+			"  );",
+			"  --nav-item-background-hover: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) var(--bg-contrast-amount),",
+			"    transparent",
+			"  );",
+			"  --background-modifier-border-focus: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) 40%,",
+			"    transparent",
+			"  );",
+			"  --nav-collapse-icon-color: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) 60%,",
+			"    transparent",
+			"  );",
+			"}",
+			".nav-folder-title[data-path^=\"${1:prefixFileName}\"]:hover {",
+			"  --nav-collapse-icon-color: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) 60%,",
+			"    var(--contrast-color)",
+			"  );",
+			"}",
+			".tree-item-children .nav-folder:has(.nav-folder-title[data-path^=\"${1:prefixFileName}\"]) {",
+			"  --nav-indentation-guide-color: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) var(--medium-contrast-amount),",
+			"    transparent",
+			"  );",
+			"}",
+			".tree-item-children",
+			"  .nav-folder:has(.nav-folder-title[data-path^=\"${1:prefixFileName}\"])",
+			"  .nav-file-title {",
+			"  color: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) var(--medium-contrast-amount),",
+			"    var(--default-text-color)",
+			"  );",
+			"  --nav-item-background-hover: color-mix(",
+			"    in srgb,",
+			"    color-mix(in srgb, var(--${2:colorName}) 50%, var(--highlight))",
+			"      var(--bg-contrast-amount),",
+			"    transparent",
+			"  );",
+			"  --background-modifier-border-focus: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) 40%,",
+			"    transparent",
+			"  );",
+			"  --nav-item-background-active: color-mix(",
+			"    in srgb,",
+			"    var(--${2:colorName}) var(--active-contrast-amount),",
+			"    transparent",
+			"  );",
+			"}"
+		],
+		"description": "Creates a css snippet for adding new color scheme for the sidebar"
+	}
+}
+
+
